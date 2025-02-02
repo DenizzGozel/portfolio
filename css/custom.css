@@ -1,0 +1,44 @@
+.logo-collapsed {
+    border: 0px transparent;
+    padding: 0;
+    border-radius: 10px;
+    width: 40.21px;
+    height: auto;
+}
+
+.logo {
+    width: 60px;
+}
+
+.img-fluid {
+    border-radius: 10px;
+}
+
+.first-project {
+    width: 75px;
+}
+
+.single-portfolio {
+    width: 300px;
+}
+
+/* .filters-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    margin-bottom: 0px;
+}
+
+.portfolio {
+    padding-bottom: 20px;
+}
