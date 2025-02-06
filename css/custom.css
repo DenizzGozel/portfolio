@@ -60,7 +60,46 @@
     }
 }
 
-/* .text-slider-items {
+.mb-5, .my-5 {
+    margin-bottom: 1.5rem !important;
+}
 
+input:focus {
+    color: rgb(191, 191, 191) !important;
+}
+
+/* .form-control:focus {
+    background-color: #dadada;
+    border-color: #ff0000;
+    outline: none;
 } */
-  
+
+.form-control {
+    position: relative;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #99d6ff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5) !important;
+    outline: none;
+}
+
+.form-control:focus::placeholder {
+    transform: translateY(-100%);
+    font-size: 0.7rem;
+    color: #00d9ffd2;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"], .btn-primary {
+    background-color: #e9ff6a42 ;
+    color: white !important;
+}
+
+.site-contact-details li > span {
+    color: #065eb5
+}
