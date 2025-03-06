@@ -79,59 +79,95 @@
 					<h2>Featured <strong>Portfolio</strong></h2>
 				</div>
 			</div>
-			<!-- <div class="filters">
+
+			<div class="filters">
 				<ul>
 					<li class="active" data-filter="*">All</li>
-					<li data-filter=".packaging">Packaging</li>
-					<li data-filter=".mockup">Mockup</li>
-					<li data-filter=".typography">Typography</li>
-					<li data-filter=".photography">Photography</li>
+					<li data-filter=".python">Python</li>
+					<li data-filter=".react">React</li>
+					<li data-filter=".node">Node.js</li>
+					<li data-filter=".js">JS/HTML/CSS</li>
 				</ul>
-			</div> -->
+			</div>
 
 			<div class="filters-content">
-				<div class="row grid">
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a href="https://web422-a6-frontend.vercel.app/" target="_blank">
-									<img class="image img-fluid" src="images/portfolio_metropolitan_museum.png" alt="">
-								</a>
-							</div>
+				<div class="portfolio-grid">
+				  
+				  <div class="single-portfolio all python">
+					<div class="relative">
+						<div class="thumb">
+							<div class="overlay overlay-bg"></div>
+							<a href="https://gemstorm.onrender.com/" target="_blank">
+							  <img 
+								class="image img-fluid" 
+								src="images/portfolio_gemstorm.png" 
+								alt="GemStorm - Board Game" 
+							  />
+							</a>
 						</div>
-						<div class="p-inner">
-							<h4>Metropolitan Museum of Art Collection</h4>
-						</div>                                         
 					</div>
-
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a href="https://lego-collection-beta.vercel.app/" target="_blank">
-									<img class="image img-fluid" src="images/portfolio_international_lego_collection.png" alt="">
-								</a>
-							</div>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Lego Collection</h4>
-						</div>                                         
+					<div class="p-inner">
+						<h4>GemStorm - Board Game</h4>
+						<div class="cat">Python</div>
 					</div>
+				  </div>
 					
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<a href="https://web222-a6.vercel.app/" target="_blank">
-									<img class="image img-fluid" src="images/portfolio_music_centre.png" alt="">
-								</a>
-							</div>                                  
-						</div>
-						<div class="p-inner">
-							<h4>Music Center</h4>
-						</div>                                         
-					</div> 
+				  <div class="single-portfolio all react">
+					<div class="relative">
+					  <div class="thumb">
+						<div class="overlay overlay-bg"></div>
+						<a href="https://web422-a6-frontend.vercel.app/" target="_blank">
+						  <img 
+							class="image img-fluid" 
+							src="images/portfolio_metropolitan_museum.png" 
+							alt="Metropolitan Museum of Art Collection" 
+						  />
+						</a>
+					  </div>
+					</div>
+					<div class="p-inner">
+					  <h4>Metropolitan Museum of Art Collection</h4>
+					  <div class="cat">React</div>
+					</div>
+				  </div>
+			  
+				  <div class="single-portfolio all node">
+					<div class="relative">
+					  <div class="thumb">
+						<div class="overlay overlay-bg"></div>
+						<a href="https://lego-collection-beta.vercel.app/" target="_blank">
+						  <img 
+							class="image img-fluid" 
+							src="images/portfolio_lego_collection.png" 
+							alt="Lego Collection" 
+						  />
+						</a>
+					  </div>
+					</div>
+					<div class="p-inner">
+					  <h4>Lego Collection</h4>
+					  <div class="cat">Node</div>
+					</div>
+				  </div>
+			  
+				  <div class="single-portfolio all js">
+					<div class="relative">
+					  <div class="thumb">
+						<div class="overlay overlay-bg"></div>
+						<a href="https://web222-a6.vercel.app/" target="_blank">
+						  <img 
+							class="image img-fluid" 
+							src="images/portfolio_music_centre.png" 
+							alt="Music Center Project" 
+						  />
+						</a>
+					  </div>
+					</div>
+					<div class="p-inner">
+					  <h4>Music Center</h4>
+					  <div class="cat">JS/HTML/CSS</div>
+					</div>
+				  </div>
 				</div>
 			</div>
 		</div>
@@ -340,6 +376,31 @@
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+		  // On clicking any filter button
+		  $('.filters li').on('click', function() {
+			// Remove 'active' from all buttons and add to the clicked one
+			$('.filters li').removeClass('active');
+			$(this).addClass('active');
+	  
+			// Get the filter value (e.g. ".python" or "*")
+			const filterValue = $(this).attr('data-filter');
+	  
+			if (filterValue === '*') {
+			  // Show all items
+			  $('.single-portfolio').show();
+			} else {
+			  // Hide everything first
+			  $('.single-portfolio').hide();
+			  // Show only the matching items
+			  $(filterValue).show();
+			}
+		  });
+		});
+	  </script>
 
 	<!-- Google Map -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
